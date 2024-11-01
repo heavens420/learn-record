@@ -11,6 +11,10 @@
     <modules>
         <module>hot-deployment</module>
         <module>token-bucket</module>
+        <module>logback-demo</module>
+        <module>flowable-demo</module>
+        <module>mq-demo</module>
+        <module>depends-demo</module>
     </modules>
 
     <properties>

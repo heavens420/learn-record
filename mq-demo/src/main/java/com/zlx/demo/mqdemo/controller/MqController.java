@@ -1,6 +1,5 @@
 package com.zlx.demo.mqdemo.controller;
 
-import com.chinaunicom.security.util.TokenDecoderUtils;
 import com.zlx.demo.mqdemo.mqUtil.RocketMqCustomer;
 import com.zlx.demo.mqdemo.mqUtil.RocketMqProducer;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +11,6 @@ import org.apache.rocketmq.common.message.MessageExt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -25,13 +23,6 @@ public class MqController {
     @Autowired
     private RocketMqCustomer consumer;
 
-    @RequestMapping("/**")
-    public String test() throws Exception {
-        String s = TokenDecoderUtils.generateToken("dsd", "fdsf", "fsdfsd");
-        System.out.println(s);
-        log.info("Test=============={}",s);
-        return "test";
-    }
 
     @GetMapping("/send")
     public String sendMsg(String topicName, String key, String msg) throws Exception {

@@ -1,5 +1,6 @@
 package com.zlx.demo.mqdemo.mqUtil;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
@@ -9,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
  */
 @Component("MqConfigValues")
 @Validated
+@Data
 public class MqConfigValues {
     public final static String ROCKET_MQ_STR = "rocketmq";
     public final static String CTG_MQ_STR = "ctgmq";
@@ -121,19 +123,19 @@ public class MqConfigValues {
     private String SendMsgTimeout;
 
 
-    @Value("${cncc.rocketmq.type:ctgmq}")
+    @Value("${cncc.rocketmq.type:rocketmq}")
     private String type;
 
     @Value("${cncc.rocketmq.maxMessageSize:4096}")
     private Integer maxMessageSize;
 
-    @Value("${cncc.rocketmq.aclEnable:false}")
+    @Value("${cncc.rocketmq.aclEnable:true}")
     private Boolean aclEnable;
 
-    @Value("${cncc.rocketmq.accessKey:''}")
+    @Value("${cncc.rocketmq.accessKey:'rocketmq2'}")
     private String accessKey;
 
-    @Value("${cncc.rocketmq.secretKey:''}")
+    @Value("${cncc.rocketmq.secretKey:'000cKadmin@#2024'}")
     private String secretKey;
 
     @Value("${cncc.rocketmq.retryTimesWhenSendFailed:2}")
@@ -164,315 +166,5 @@ public class MqConfigValues {
     @Value("${cncc.rocketmq.customerNameKeyAsyncRes:YF_C_T_CNCC_ASYNC_RES}")
     private String customerNameKeyAsyncRes;
 
-    public String getCustomerNameKeyAsyncRes() {
-        return customerNameKeyAsyncRes;
-    }
 
-    public void setCustomerNameKeyAsyncRes(String customerNameKeyAsyncRes) {
-        this.customerNameKeyAsyncRes = customerNameKeyAsyncRes;
-    }
-
-    public String getCustomerNameKey_neopNeConnectFailRetry() {
-        return customerNameKey_neopNeConnectFailRetry;
-    }
-
-    public void setCustomerNameKey_neopNeConnectFailRetry(String customerNameKey_neopNeConnectFailRetry) {
-        this.customerNameKey_neopNeConnectFailRetry = customerNameKey_neopNeConnectFailRetry;
-    }
-
-    public int getProducerNumber() {
-        return producerNumber;
-    }
-
-    public void setProducerNumber(int producerNumber) {
-        this.producerNumber = producerNumber;
-    }
-
-    public String getSendMsgTimeout() {
-        return SendMsgTimeout;
-    }
-
-    public void setSendMsgTimeout(String sendMsgTimeout) {
-        SendMsgTimeout = sendMsgTimeout;
-    }
-
-    public String getProducerGroupName() {
-        return producerGroupName;
-    }
-
-    public void setProducerGroupName(String producerGroupName) {
-        this.producerGroupName = producerGroupName;
-    }
-
-    public String getAddr() {
-        return addr;
-    }
-
-    public void setAddr(String addr) {
-        this.addr = addr;
-    }
-
-    public String getAuthId() {
-        return authId;
-    }
-
-    public void setAuthId(String authId) {
-        this.authId = authId;
-    }
-
-    public String getAuthPwd() {
-        return authPwd;
-    }
-
-    public void setAuthPwd(String authPwd) {
-        this.authPwd = authPwd;
-    }
-
-    public String getClusterName() {
-        return clusterName;
-    }
-
-    public void setClusterName(String clusterName) {
-        this.clusterName = clusterName;
-    }
-
-    public String getTenantId() {
-        return tenantId;
-    }
-
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-    }
-
-    public String getCustomerNameKey_cmdInstance() {
-        return customerNameKey_cmdInstance;
-    }
-
-    public void setCustomerNameKey_cmdInstance(String customerNameKey_cmdInstance) {
-        this.customerNameKey_cmdInstance = customerNameKey_cmdInstance;
-    }
-
-    public String getCustomerNameKey_ckeckEws() {
-        return customerNameKey_ckeckEws;
-    }
-
-    public void setCustomerNameKey_ckeckEws(String customerNameKey_ckeckEws) {
-        this.customerNameKey_ckeckEws = customerNameKey_ckeckEws;
-    }
-
-    public String getCustomerNameKey_ckeckEwsXml() {
-        return customerNameKey_ckeckEwsXml;
-    }
-
-    public void setCustomerNameKey_ckeckEwsXml(String customerNameKey_ckeckEwsXml) {
-        this.customerNameKey_ckeckEwsXml = customerNameKey_ckeckEwsXml;
-    }
-
-    public String getCustomerNameKey_ckeckEwsUpdate() {
-        return customerNameKey_ckeckEwsUpdate;
-    }
-
-    public void setCustomerNameKey_ckeckEwsUpdate(String customerNameKey_ckeckEwsUpdate) {
-        this.customerNameKey_ckeckEwsUpdate = customerNameKey_ckeckEwsUpdate;
-    }
-
-    public String getCustomerNameKey_cmdInstanceUpdate() {
-        return customerNameKey_cmdInstanceUpdate;
-    }
-
-    public void setCustomerNameKey_cmdInstanceUpdate(String customerNameKey_cmdInstanceUpdate) {
-        this.customerNameKey_cmdInstanceUpdate = customerNameKey_cmdInstanceUpdate;
-    }
-
-    public String getCustomerNameKey_neopConfig() {
-        return customerNameKey_neopConfig;
-    }
-
-    public void setCustomerNameKey_neopConfig(String customerNameKey_neopConfig) {
-        this.customerNameKey_neopConfig = customerNameKey_neopConfig;
-    }
-
-    public String getCustomerNameKey_neopCallBackXml() {
-        return customerNameKey_neopCallBackXml;
-    }
-
-    public void setCustomerNameKey_neopCallBackXml(String customerNameKey_neopCallBackXml) {
-        this.customerNameKey_neopCallBackXml = customerNameKey_neopCallBackXml;
-    }
-
-    public String getCustomerNameKey_asyncEws() {
-        return customerNameKey_asyncEws;
-    }
-
-    public void setCustomerNameKey_asyncEws(String customerNameKey_asyncEws) {
-        this.customerNameKey_asyncEws = customerNameKey_asyncEws;
-    }
-
-    public String getConsumerThreadMin() {
-        return consumerThreadMin;
-    }
-
-    public void setConsumerThreadMin(String consumerThreadMin) {
-        this.consumerThreadMin = consumerThreadMin;
-    }
-
-    public String getConsumerThreadMax() {
-        return consumerThreadMax;
-    }
-
-    public void setConsumerThreadMax(String consumerThreadMax) {
-        this.consumerThreadMax = consumerThreadMax;
-    }
-
-    public String getCustomerNameKey_serverAsyncReply() {
-        return customerNameKey_serverAsyncReply;
-    }
-
-    public void setCustomerNameKey_serverAsyncReply(String customerNameKey_serverAsyncReply) {
-        this.customerNameKey_serverAsyncReply = customerNameKey_serverAsyncReply;
-    }
-
-    public Boolean getVipChannelEnabled() {
-        return vipChannelEnabled;
-    }
-
-    public void setVipChannelEnabled(Boolean vipChannelEnabled) {
-        this.vipChannelEnabled = vipChannelEnabled;
-    }
-
-    public String getCustomerNameKey_tfj_recovery() {
-        return customerNameKey_tfj_recovery;
-    }
-
-    public void setCustomerNameKey_tfj_recovery(String customerNameKey_tfj_recovery) {
-        this.customerNameKey_tfj_recovery = customerNameKey_tfj_recovery;
-    }
-
-    public String getCustomerNameKey_tfj_stop() {
-        return customerNameKey_tfj_stop;
-    }
-
-    public void setCustomerNameKey_tfj_stop(String customerNameKey_tfj_stop) {
-        this.customerNameKey_tfj_stop = customerNameKey_tfj_stop;
-    }
-
-    public Integer getMaxMessageSize() {
-        return maxMessageSize;
-    }
-
-    public void setMaxMessageSize(Integer maxMessageSize) {
-        this.maxMessageSize = maxMessageSize;
-    }
-
-    public Boolean getAclEnable() {
-        return aclEnable;
-    }
-
-    public void setAclEnable(Boolean aclEnable) {
-        this.aclEnable = aclEnable;
-    }
-
-    public String getAccessKey() {
-        return accessKey;
-    }
-
-    public void setAccessKey(String accessKey) {
-        this.accessKey = accessKey;
-    }
-
-    public String getSecretKey() {
-        return secretKey;
-    }
-
-    public void setSecretKey(String secretKey) {
-        this.secretKey = secretKey;
-    }
-
-    public Integer getRetryTimesWhenSendFailed() {
-        return retryTimesWhenSendFailed;
-    }
-
-    public void setRetryTimesWhenSendFailed(Integer retryTimesWhenSendFailed) {
-        this.retryTimesWhenSendFailed = retryTimesWhenSendFailed;
-    }
-
-    public Integer getConsumerMaxSize() {
-        return consumerMaxSize;
-    }
-
-    public void setConsumerMaxSize(Integer consumerMaxSize) {
-        this.consumerMaxSize = consumerMaxSize;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public boolean isCtgMq() {
-        return CTG_MQ_STR.equals(getType());
-    }
-    public boolean isRocketMq() {
-        return ROCKET_MQ_STR.equals(getType());
-    }
-
-    @Deprecated
-    public Boolean getEnable() {
-        return enable;
-    }
-
-    public void setEnable(Boolean enable) {
-        this.enable = enable;
-    }
-
-    public String getCmdInstanceURetryGroupName() {
-        return cmdInstanceURetryGroupName;
-    }
-
-    public void setCmdInstanceURetryGroupName(String cmdInstanceURetryGroupName) {
-        this.cmdInstanceURetryGroupName = cmdInstanceURetryGroupName;
-    }
-
-    public String getCkeckEwsURetryGroupName() {
-        return ckeckEwsURetryGroupName;
-    }
-
-    public void setCkeckEwsURetryGroupName(String ckeckEwsURetryGroupName) {
-        this.ckeckEwsURetryGroupName = ckeckEwsURetryGroupName;
-    }
-
-    public String getCustomerNameKey_ckeckEwsUpdateRetry() {
-        return customerNameKey_ckeckEwsUpdateRetry;
-    }
-
-    public void setCustomerNameKey_ckeckEwsUpdateRetry(String customerNameKey_ckeckEwsUpdateRetry) {
-        this.customerNameKey_ckeckEwsUpdateRetry = customerNameKey_ckeckEwsUpdateRetry;
-    }
-
-    public String getCustomerNameKey_cmdInstanceUpdateRetry() {
-        return customerNameKey_cmdInstanceUpdateRetry;
-    }
-
-    public void setCustomerNameKey_cmdInstanceUpdateRetry(String customerNameKey_cmdInstanceUpdateRetry) {
-        this.customerNameKey_cmdInstanceUpdateRetry = customerNameKey_cmdInstanceUpdateRetry;
-    }
-
-    public int getMqRetryNum() {
-        return mqRetryNum;
-    }
-
-    public void setMqRetryNum(int mqRetryNum) {
-        this.mqRetryNum = mqRetryNum;
-    }
-
-    public Long getMqRetryDelay() {
-        return mqRetryDelay;
-    }
-
-    public void setMqRetryDelay(Long mqRetryDelay) {
-        this.mqRetryDelay = mqRetryDelay;
-    }
 }
